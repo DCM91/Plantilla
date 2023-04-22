@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <>
       <div data-theme="luxury">
-        <h1>iooo</h1>
+        <h1>issooo</h1>
       </div>   
       <div data-themw="cupcake">
-        <h1>iooo</h1>
+        <h1>issooo</h1>
       </div>
     </>
   )
