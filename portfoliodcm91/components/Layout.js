@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
+import { Footer } from './Footer'
 
-export const Layout = ({title = "TypedNextCinema" , children}) => {
+export const Layout = ({theme, title = "TypedNextCinema" , children}) => {
   return (
     <div>
         <Head>
@@ -12,7 +13,7 @@ export const Layout = ({title = "TypedNextCinema" , children}) => {
         </Head>
         <header></header>
         <main>{children}</main>
-        <footer></footer>
+        <footer><Footer theme={theme} /></footer>
     </div>
   )
 }

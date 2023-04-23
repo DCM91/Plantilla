@@ -1,4 +1,4 @@
-import { Layout } from "@/components/layOut"
+import { Layout } from "../components/Layout"
 import { useState } from "react"
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 
 
   return (
-    <Layout title="portfolio">
+     <Layout theme={theme} title="portfolio">
         <div data-theme={theme}>
           <h1>issooo</h1>
             <button className="btn btn-primary" onClick={handleTheme} >ClickME</button>
