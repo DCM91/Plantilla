@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
      <Layout theme={theme} title="portfolio">
-        <div data-theme={theme}>
+        <div className="grid p-2" data-theme={theme}>
           <h1>issooo</h1>
             <button className="btn btn-primary" onClick={handleTheme} >ClickME</button>
 
