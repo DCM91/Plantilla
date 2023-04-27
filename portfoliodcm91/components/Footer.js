@@ -5,7 +5,7 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 export const Footer = ({theme}) => {
   return (
     <div data-theme={theme}>
-        <footer data-theme={theme} className="footer p-8 py-6 bg-neutral text-neutral-content" >
+        <footer  className="footer p-8 py-6 bg-neutral text-neutral-content" >
             <div style={{position: 'relative', fontSize:"large"}}>
                 <p><br/>El código de esta aplicación está disponible, lo que significa que puedes copiar y manipular el código libremente.<br/> <br/> Agradecería  una mención si utilizas este código</p>
             </div> 
