@@ -17,11 +17,9 @@ export default function Home() {
 
   return (
      <Layout theme={theme} title="Dcm91Portfolio - Home">
-        <div className="grid p-2" data-theme={theme}>
-          <div>
-            <h1 className=" h-56">{t.home.title}</h1>
-            <button className="btn btn-primary" onClick={handleTheme} >ClickME</button>
-          </div>
+        <div className="grid" data-theme={theme}>
+            <h1 className="flex justify-center items-center text-xl h-80">{t.home.title}</h1>
+            <button className="btn btn-primary mb-2" onClick={handleTheme} >ClickME</button>
         </div>   
       </Layout>
   )

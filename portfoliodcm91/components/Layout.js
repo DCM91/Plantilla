@@ -10,28 +10,32 @@ import Link from "next/link"
 export const Layout = ({theme, title = "Dcm91Portfolio" , children}) => {
   const router = useRouter()
   const t = router.locale == "en" ? en : es
+
   return (
-    <div data-theme={theme}>
+    <div data-theme={theme} className='h-full grid overflow-hidden'>
         <Head>
             <title>{title}</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <header>
+
+        <header className='p-2'>
           <Navbar theme={theme}/>
-          <ul>
+          <ul className='flex'>
             {router.locales.map((loc)=>(
-                <li key={loc}>
+                <li key={loc}className='pr-4'>
                     <Link href={router.asPath} locale={loc}>
                         {loc}
                     </Link>
                 </li>
             ))}
-        </ul>
+          </ul>
         </header>
-        <main>{children}</main>
-        <footer><Footer theme={theme} /></footer>
+
+        <main className=''>{children}</main>
+
+        <footer className=''><Footer theme={theme} /></footer>
     </div>
   )
 }
