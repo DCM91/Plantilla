@@ -1,15 +1,10 @@
 import Head from 'next/head'
 import { Footer } from './Footer'
 import { Navbar } from './navbar'
-import { useRouter } from "next/router"
-import en from "@/languages/en"
-import es from "@/languages/es"
-import Link from "next/link"
+import { Selector } from './selector'
 
 
 export const Layout = ({theme, title = "Dcm91Portfolio" , children}) => {
-  const router = useRouter()
-  const t = router.locale == "en" ? en : es
 
   return (
     <div data-theme={theme} className='h-full grid overflow-hidden'>
@@ -22,15 +17,7 @@ export const Layout = ({theme, title = "Dcm91Portfolio" , children}) => {
 
         <header className='p-2'>
           <Navbar theme={theme}/>
-          <ul className='flex'>
-            {router.locales.map((loc)=>(
-                <li key={loc}className='pr-4'>
-                    <Link href={router.asPath} locale={loc}>
-                        {loc}
-                    </Link>
-                </li>
-            ))}
-          </ul>
+          <Selector />
         </header>
 
         <main className=''>{children}</main>
