@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import en from "@/languages/en"
 import es from "@/languages/es"
+import fr from "@/languages/fr"
 
 export const Selector = () => {
     const router = useRouter()
