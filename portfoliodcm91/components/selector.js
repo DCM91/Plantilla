@@ -1,26 +1,27 @@
 import { useRouter } from "next/router"
-import Link from "next/link"
 import en from "@/languages/en"
 import es from "@/languages/es"
 import fr from "@/languages/fr"
 
 export const Selector = () => {
     const router = useRouter()
-    const t = router.locale == "en" ? en : es
-    const changeLanguage = (language) => {
-        router.push(router.pathname, router.asPath, { locale: language });
+    let t
+    if (router.locale === 'en') {
+      t = en
+    } else if (router.locale === 'es') {
+      t = es
+    } else if (router.locale === 'fr') {
+      t = fr
+    }    
+    const changeLanguage = (e) => {
+      router.push(router.pathname, router.pathname, { locale: e.target.value })
+
       };
-  return (
-    <div>
-        <ul className='flex'>
-            {router.locales.map((loc)=>(
-           <li key={loc}className='pr-4'>
-                <Link href={router.asPath} locale={loc}>
-                    {loc}
-                </Link>
-            </li>
-           ))}
-      </ul>
-    </div>
-  )
-}
+      return (
+        <select value={router.locale} onChange={changeLanguage}>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+        </select>
+      )
+    }

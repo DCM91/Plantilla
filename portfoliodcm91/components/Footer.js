@@ -1,13 +1,26 @@
 import React from 'react'
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import en from "@/languages/en"
+import es from "@/languages/es"
+import fr from "@/languages/fr"
+import { useRouter } from 'next/router';
 
 
 export const Footer = ({theme}) => {
+  const router = useRouter()
+    let t
+    if (router.locale === 'en') {
+      t = en
+    } else if (router.locale === 'es') {
+      t = es
+    } else if (router.locale === 'fr') {
+      t = fr
+    }  
   return (
     <div data-theme={theme}>
         <footer  className="footer p-8 py-6 bg-neutral text-neutral-content" >
             <div style={{position: 'relative', fontSize:"large"}}>
-                <p><br/>El código de esta aplicación está disponible, lo que significa que puedes copiar y manipular el código libremente.<br/> <br/> Agradecería  una mención si utilizas este código</p>
+                <p><br/>{t.footer.text1}<br/> <br/>{t.footer.text2}</p>
             </div> 
             <div>
                 <span className="footer-title" style={{fontSize:"large"}}>Social &nbsp; /DCM91</span> 
